@@ -61,5 +61,5 @@ app.use('/auth', require('./controllers/auth'));
 
 // initialize app on port 
 app.listen(process.env.PORT || 3000, function() {
-    console.log(`Listening to the smooth swee sounds of port ${process.env.PORT} in the morning`)
+    console.log(`Lets get ready to roll init on port ${process.env.PORT}`)
 })

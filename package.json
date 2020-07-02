@@ -1,7 +1,6 @@
 {
-  "name": "express-auth",
+  "name": "express-tracker",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.2",
     "bcrypt": "^5.0.0",
     "connect-flash": "^0.1.1",
     "connect-session-sequelize": "^7.0.0",
@@ -20,10 +20,20 @@
     "express-session": "^1.17.1",
     "flash": "^1.1.0",
     "helmet": "^3.23.3",
+    "method-override": "^3.0.0",
     "morgan": "^1.10.0",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "pg": "^8.2.1",
     "sequelize": "^6.2.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zbarovsky/encounter-tracker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zbarovsky/encounter-tracker/issues"
+  },
+  "homepage": "https://github.com/zbarovsky/encounter-tracker#readme",
+  "description": ""
 }
