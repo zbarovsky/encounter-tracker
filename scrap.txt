@@ -1,0 +1,13 @@
+encounter
+---------
+sequelize model:create --name encounter --attributes title:string
+
+sequelize db:migrate
+
+monster
+------
+sequelize model:create --name monster --attributes name:string,health:integer,initiative:integer
+
+sequelize db:migrate
+
+TODO: ADD PARTY/PLAYER

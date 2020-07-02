@@ -1,5 +1,5 @@
 {
-  "name": "express-tracker",
+  "name": "encounter-tracker",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -35,5 +35,6 @@
     "url": "https://github.com/zbarovsky/encounter-tracker/issues"
   },
   "homepage": "https://github.com/zbarovsky/encounter-tracker#readme",
-  "description": ""
+  "description": "## Idea Encounter tracker for DnD adventures to make lists of encounters and, when started, the order can be adjusted based on the intiative roll of each monster (or hoard of monsters), and PC's.",
+  "devDependencies": {}
 }

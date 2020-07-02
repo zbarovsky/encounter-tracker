@@ -6,15 +6,15 @@ Encounter tracker for DnD adventures to make lists of encounters and, when start
 You're parties ready to fight that adult black dragon, initiative is rolled, and now you as the DM have to deal with the hassle of writing out and keeping track of the initiative order. WELL NOT ANYMORE! Now all that can be solved with my (soon to be created) encounter tracker. With it you can create your encounters ahead of time (no more making it up on the fly, even though we all know it happens all the time, and that's okay), and with simply adding their init roll, can adjust where in the initiative order they stand. The best part, this is doable for your players characters as well.
 
 ## Wireframes && ERD
-Main Page: https://wireframe.cc/ndgoMT
-Create Profile: https://wireframe.cc/lpcfvt
-Profile List: https://wireframe.cc/XeBtUQ
-Monster Results: https://wireframe.cc/eUarXM
-Init Roll: https://wireframe.cc/ujqq5c
-Party Create: https://wireframe.cc/cSTwJj
-Party Profile Page: https://wireframe.cc/ODCURg
+* Main Page: https://wireframe.cc/ndgoMT
+* Create Profile: https://wireframe.cc/lpcfvt
+* Profile List: https://wireframe.cc/XeBtUQ
+* Monster Results: https://wireframe.cc/eUarXM
+* Init Roll: https://wireframe.cc/ujqq5c
+* Party Create: https://wireframe.cc/cSTwJj
+* Party Profile Page: https://wireframe.cc/ODCURg
 
-ERD: https://dbdiagram.io/d/5efc19ef0425da461f041746 
+* ERD: https://dbdiagram.io/d/5efc19ef0425da461f041746 
 
 ## Tech Stack
 * HTML
