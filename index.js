@@ -22,7 +22,7 @@ app.use(helmet());
 // create new instance of class SequelizeStore
 const sessionStore = new SequelizeStore({
     db: db.sequelize,
-    expiration: 1000 * 60 * 30
+    expiration: 1000 * 60 * 120
 })
 
 app.use(session({
@@ -56,8 +56,10 @@ app.get('/profile', isLoggedIn, function(req, res){
     res.render('profile');
 })
 
-// include auth controller
+// include controllers
 app.use('/auth', require('./controllers/auth'));
+app.use ('/encounter', require('./controllers/encounter'));
+app.use('/monster', require('./controllers/monster'));
 
 // initialize app on port 
 app.listen(process.env.PORT || 3000, function() {
