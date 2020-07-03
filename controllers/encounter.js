@@ -6,11 +6,14 @@ const axios = require('axios');
 const flash = require('connect-flash');
 const passport = require('../config/ppConfig');
 
-// GET our home route
+// GET our home run route
 router.get('/', function(req, res) {
     res.render('encounter/run')
 });
 
+router.get('/create', function(req, res) {
+    res.render('encounter/create')
+});
 
 
 
