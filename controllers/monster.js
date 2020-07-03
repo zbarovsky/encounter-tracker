@@ -15,7 +15,7 @@ const passport = require('../config/ppConfig');
 
 // GET route for viewing monster data via API
 router.get('/', function(req, res) {
-    let dndUrl = `https://www.dnd5eapi.co/api/monsters/${req.query.index}/`
+    let dndUrl = `https://www.dnd5eapi.co/api/monsters/${req.query.name}/`
     //console.log(dndUrl)
     axios.get(dndUrl)
     .then(apiResponse => {

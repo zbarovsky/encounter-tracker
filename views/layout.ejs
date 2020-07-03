@@ -12,15 +12,15 @@
                 <a href="/auth/logout">Logout</a>
                 <a href="/profile">Profile</a>
                 <a href="/">Home</a>
-                <form action="/monster/view" method="GET"> 
-                    <input id="viewMonster" class="form-control" type="text" placeholder="Search for monsters.">  
+                <form action="/monster" method="GET"> 
+                    <input id="viewMonster" class="form-control" type="text" name="name" placeholder="Search for monsters.">  
                 </form>
             <% } else { %>
                 <a href="/auth/register">Register</a>
                 <a href="/auth/login">Login</a>
                 <a href="/">Home</a>
                 <form action="/monster" method="GET"> 
-                    <input id="viewMonster" class="form-control" type="text" name="index" placeholder="Search for monsters.">  
+                    <input id="viewMonster" class="form-control" type="text" name="name" placeholder="Search for monsters.">  
                 </form>
             <% } %>
         </nav>
