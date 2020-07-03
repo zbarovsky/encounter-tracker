@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auth Boilerplate</title>
+    <title>Encounter Tracker</title>
 </head>
 <body>
     <header>
@@ -12,15 +12,15 @@
                 <a href="/auth/logout">Logout</a>
                 <a href="/profile">Profile</a>
                 <a href="/">Home</a>
-                <form action="/monster/view" method="GET">
-                    <input id="viewMonster" class="form-control" type="text" name="text">
+                <form action="/monster/view" method="GET"> 
+                    <input id="viewMonster" class="form-control" type="text" placeholder="Search for monsters.">  
                 </form>
             <% } else { %>
                 <a href="/auth/register">Register</a>
                 <a href="/auth/login">Login</a>
                 <a href="/">Home</a>
-                <form action="/monster/view" method="GET">
-                    <input id="viewMonster" class="form-control" type="text" name="text" placeholder="Search for monsters.">  
+                <form action="/monster" method="GET"> 
+                    <input id="viewMonster" class="form-control" type="text" name="index" placeholder="Search for monsters.">  
                 </form>
             <% } %>
         </nav>
