@@ -4,32 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encounter Tracker</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="container-fluid">
             <% if(currentUser) { %>
-                <a href="/auth/logout">Logout</a>
-                <a href="/profile">Profile</a>
-                <a href="/">Home</a>
-                <form action="/monster" method="GET"> 
+                <a class="row" href="/auth/logout">Logout</a>
+                <a class="row" href="/profile">Profile</a>
+                <a class="row" href="/">Home</a>
+                <form class="row" action="/monster" method="GET"> 
                     <input id="viewMonster" class="form-control" type="text" name="name" placeholder="Search for monsters.">  
                 </form>
             <% } else { %>
                 <a href="/auth/register">Register</a>
                 <a href="/auth/login">Login</a>
                 <a href="/">Home</a>
-                <form action="/monster" method="GET"> 
+                <form class="form-inline" action="/monster" method="GET"> 
+                    <label for="viewMonster" class="sr-only">Search for monster.</label>
                     <input id="viewMonster" class="form-control" type="text" name="name" placeholder="Search for monsters.">  
                 </form>
             <% } %>
         </nav>
     </header>
     <div class="container">
-        <h1>Authenticating Users 🐋</h1>
         <%- include('./partials/alerts') %>
         <%- body %>
     </div>
-    
+    <footer class="container page-footer fixed-bottom">
+        <p>Created by Zack Barovsky. Find out more about this project here <a href="https://github.com/zbarovsky/encounter-tracker/blob/master/README.md">github</a></p>
+    </footer>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </body>
 </html>
