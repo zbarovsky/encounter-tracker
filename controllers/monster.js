@@ -5,6 +5,7 @@ const axios = require('axios');
 // import middleware
 const flash = require('connect-flash');
 const passport = require('../config/ppConfig');
+const isLoggedIn = require('../middleware/isLoggedIn');
 //const { default: ModelManager } = require('sequelize/types/lib/model-manager');
 
 // GET route for viewing monster data via API
