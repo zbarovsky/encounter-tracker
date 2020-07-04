@@ -21,6 +21,17 @@ router.get('/', function(req, res) {
     })
 });
 
+//POST route to add monster's name to data base to be accessed by encounters list
+router.post('/', function(req, res) {
+    db.monster.findOrCreate({
+        where: {name: req.body.name}
+    }).then(function([encounterAdd, created]) {
+        console.log(encounterAdd)
+    }).catch(error => {
+        console.log(error)
+    })
+})
+
 
 
 

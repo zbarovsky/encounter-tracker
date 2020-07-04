@@ -8,3 +8,10 @@
 </div>
 
 <!-- TODO: Make add to encounter button that adds monsters to an encounter -->
+<form method="POST" action="/monster">
+    <label class="sr-only">Add monster to encounter</label>
+    <input hidden type="text" name="name" value="<%= monster.name %>">
+    <button class="btn btn-primary" type="submit">Add to encounter</button>
+</form>
+
+
