@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING
   }, {});
   encounter.associate = function(models) {
-    // associations can be defined here
+    models.encounter.belongsToMany(models.monster, {through: "monstersEncounters"})
   };
   return encounter;
 };

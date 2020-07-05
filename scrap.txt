@@ -10,4 +10,10 @@ sequelize model:create --name monster --attributes name:string,health:integer,in
 
 sequelize db:migrate
 
+monstersEncounters
+------------------
+sequelize model:create --name monstersEncounters --attributes monsterId:integer,encounterId:integer
+
+sequelize db:migrate
+
 TODO: ADD PARTY/PLAYER

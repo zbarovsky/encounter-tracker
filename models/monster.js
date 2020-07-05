@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     initiative: DataTypes.INTEGER
   }, {});
   monster.associate = function(models) {
-    // associations can be defined here
+    models.monster.belongsToMany(models.encounter, {through: "monstersEncounters"})
   };
   return monster;
 };
