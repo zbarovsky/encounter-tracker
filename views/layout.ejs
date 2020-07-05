@@ -10,29 +10,34 @@
 </head>
 <body>
     <header>
-        <nav class="container-fluid">
+        <nav class="navbar navbar-dark bg-dark">
             <% if(currentUser) { %>
-                <a class="form-inline" href="/auth/logout">Logout</a>
-                <a class="form-inline" href="/profile">Profile</a>
-                <a class="form-inline" href="/">Home</a>
-                <a href="/encounter/create">Create Encounter</a>
-                <form class="form-inline" action="/monster" method="GET"> 
+            <div class="row justify-content-between">
+                <a class="col" href="/auth/logout">Logout</a>
+                <a class="col" href="/profile">Profile</a>
+                <form class="col-8" action="/monster" method="GET"> 
                     <label for="viewMonster" class="sr-only">Search for monster.</label>
-                    <input id="viewMonster" class="form-control" type="text" name="name" placeholder="Search for monsters.">  
+                    <input id="viewMonster" class="form-control" type="text" name="name" placeholder="Search for monsters">  
                 </form>
+                <a class="col" href="/encounter/create">Create Encounter</a>
+                <a class="col" href="/">Home</a>
+            </div>
             <% } else { %>
-                <a class="form-inline" href="/auth/register">Register</a>
-                <a class="form-inline" href="/auth/login">Login</a>
-                <a class="form-inline" href="/">Home</a>
-                <a class="form-inline" href="/encounter/create">Create Encounter</a>
+            <div class="navbar mx-auto">
+                <a class="navbar-nav mr-2" href="/auth/register">Register</a>
+                <a class="navbar-nav mr-2" href="/auth/login">Login</a>
                 <form class="form-inline" action="/monster" method="GET"> 
                     <label for="viewMonster" class="sr-only">Search for monster.</label>
-                    <input id="viewMonster" class="form-control" type="text" name="name" placeholder="Search for monsters.">  
+                    <input id="viewMonster" class="form-control mr-2" type="text" name="name" placeholder="Search for monsters">  
                 </form>
+                <a class="navbar-nav mr-2" href="/encounter/create">Create Encounter</a>
+                <a class="navbar-nav mr-2" href="/">Home</a>
+                
+            </div>
             <% } %>
         </nav>
     </header>
-    <div class="container">
+    <div class="container my-4">
         <%- include('./partials/alerts') %>
         <%- body %>
     </div>
