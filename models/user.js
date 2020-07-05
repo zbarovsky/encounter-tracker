@@ -44,7 +44,7 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
     user.associate = function(models) {
-        // TODO: any user associations you want
+        models.user.belongsToMany(models.encounter, {through: "usersEncounters"});
     }
     // validPassword definition to validate password at user login
     user.prototype.validPassword = function(passwordTyped) {
