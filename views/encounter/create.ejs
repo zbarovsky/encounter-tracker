@@ -1,4 +1,14 @@
 <!-- Page to create encounter -->
 <h2>Enter the title of your encounter below to get started</h2>
-
-<!-- add title box, monster search bar, and submit button that redirects to page about monster -->
+<!-- add title box, redirect to view page with monster search bar && instructions-->
+<% if(currentUser) { %>
+<form method="POST" action="/encounter">
+    <div class="form-group">
+        <label for="createEncounter" class="sr-only">Create Encounter</label>
+        <input type="text" class="form-control" type="text" name="title" id="createEncounter">
+        <button class="btn btn-primary" type="submit">Create Encounter</button>
+    </div>
+</form>
+<% } else { %>
+    <p class="form-inline">Please <a class="form-inline" href="/auth/register"> Sign up </a> to continue.</p>
+<% } %>

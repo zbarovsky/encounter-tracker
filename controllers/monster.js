@@ -27,7 +27,8 @@ router.post('/', function(req, res) {
     db.monster.findOrCreate({
         where: {name: req.body.name}
     }).then(function([encounterAdd, created]) {
-        console.log(encounterAdd)
+        //console.log(encounterAdd)
+        res.redirect('profile')
     }).catch(error => {
         console.log(error)
     })
