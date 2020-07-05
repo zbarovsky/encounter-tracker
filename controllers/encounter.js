@@ -16,13 +16,19 @@ router.get('/create', function(req, res) {
     res.render('encounter/create')
 });
 
-// POST route to add title to encounter
+// POST route to add title to encounter && add to specific logged in user
 router.post('/', function(req, res) {
     db.encounter.findOrCreate({
         where: {title: req.body.title}
-    }).then(function([createTitle,created]){
-        console.log(createTitle)
-        res.redirect('profile')
+    }).then(function([encounter, created]){
+        db.user.findOrCreate({
+            where: {id: req.user.id}
+        }).then(function([user, created]) {
+            encounter.addUser(user).then(function(relationInfo) {
+                console.log(user.id, " created ", encounter.title);
+                res.redirect('profile')
+            })
+        })
     }).catch(error => {
         console.log(error)
     })
