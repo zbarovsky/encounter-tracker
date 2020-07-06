@@ -16,6 +16,10 @@ router.get('/create', function(req, res) {
     res.render('encounter/create')
 });
 
+router.get('/view', function(req, res) {
+    res.render('encounter/view')
+})
+
 // GET router to post encounter titles to monster view page
 router.get('/', function(req, res) {
     db.encounter.findAll()
