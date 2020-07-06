@@ -1,1 +1,7 @@
 <h2>Hi <%= currentUser.name %>. Welcome to Encounter Tracker!</h2>
+
+<% encounter.forEach(function(encounter) { %>
+    <h2><%= encounter.title %></h2>
+<% }); %>
+
+<!-- From there create a "run" button that goes to run encounter page and loads encounters with list of monsters -->

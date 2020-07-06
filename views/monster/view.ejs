@@ -10,6 +10,7 @@
     <h2><%= monster.type %></h2>
     <h2><%= monster.challenge_rating %></h2>
 </div>
+<hr />
 
 <!-- TODO: Make add to encounter button that adds monsters to an encounter -->
 <% if(currentUser) { %>
@@ -22,6 +23,7 @@
                 <input hidden type="text" name="encounterId" value="<%= encounter.id %>">
                 <button class="btn btn-primary" type="submit">Add to encounter</button>
             </form>
+        <hr />
         </div>
     <% }) %>
 <% } else { %>

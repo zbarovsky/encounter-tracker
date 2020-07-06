@@ -52,8 +52,14 @@ app.get('/', function(req, res) {
     res.render('index');
 })
 
+// GET route to show encounter titles on profile page
 app.get('/profile', isLoggedIn, function(req, res){
-    res.render('profile');
+    db.user.findByPk(req.user.id, {include: [db.encounter]})
+    .then(function(user) {
+        res.render('profile', {encounter: user.encounters})
+    }).catch(error => {
+    console.log(error)
+    })
 })
 
 // include controllers

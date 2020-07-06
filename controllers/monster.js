@@ -19,7 +19,6 @@ router.get('/', function(req, res) {
         .then(function(user) {
             res.render('monster/view', {monster: monster, encounter: user.encounters})
         })
-        //console.log(monster);
     }).catch(error => {
         console.log(error)
     })
