@@ -3,15 +3,17 @@
 <h1>Welcome to Encounter Tracker!</h1>
 
 <!-- Stick something here, idk, an image or something like that. Bulk out the page a bit -->
-
-<h4>Please sign up, or log in to get started</h4>
-<form class="form-group" action="./auth/login"> 
-    <label for="viewMonster" class="sr-only">Sign up</label>
-    <input id="viewMonster" class="btn btn-primary" type="submit" name="name" value="Login to continue">  
-</form>
-<p>Or</p>
-<form class="form-group" action="./auth/register"> 
-    <label for="viewMonster" class="sr-only">Register</label>
-    <input id="viewMonster" class="btn btn-primary" type="submit" name="name" value="Sign up here">  
-</form>
-</div>
+<% if(currentUser) { %>
+<h2>Choose an option below</h2>
+<% } else { %>
+    <h4>Please sign up, or log in to get started</h4>
+    <form class="form-inline" action="./auth/login"> 
+        <label for="viewMonster" class="sr-only">Sign up</label>
+        <input id="viewMonster" class="btn btn-primary" type="submit" name="name" value="Login to continue">  
+    </form>
+    <p class="form-inline"> Or </p>
+    <form class="form-inline" action="./auth/register"> 
+        <label for="viewMonster" class="sr-only">Register</label>
+        <input id="viewMonster" class="btn btn-primary" type="submit" name="name" value="Sign up here">  
+    </form>
+<% } %>

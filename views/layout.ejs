@@ -12,15 +12,15 @@
     <header>
         <nav class="navbar navbar-dark bg-dark">
             <% if(currentUser) { %>
-            <div class="row justify-content-between">
-                <a class="col" href="/auth/logout">Logout</a>
-                <a class="col" href="/profile">Profile</a>
-                <form class="col-8" action="/monster" method="GET"> 
+            <div class="navbar mx-auto">
+                <a class="navbar-nav mr-2" href="/auth/logout">Logout</a>
+                <a class="navbar-nav mr-2" href="/profile">Profile</a>
+                <form class="form-inline" action="/monster" method="GET"> 
                     <label for="viewMonster" class="sr-only">Search for monster.</label>
                     <input id="viewMonster" class="form-control" type="text" name="name" placeholder="Search for monsters">  
                 </form>
-                <a class="col" href="/encounter/create">Create Encounter</a>
-                <a class="col" href="/">Home</a>
+                <a class="navbar-nav mr-2" href="/encounter/create">Create Encounter</a>
+                <a class="navbar-nav mr-2" href="/">Home</a>
             </div>
             <% } else { %>
             <div class="navbar mx-auto">
