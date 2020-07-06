@@ -28,8 +28,8 @@ You're parties ready to fight that adult black dragon, initiative is rolled, and
 * A lot of dependencies
 
 ## MVP
-* Log in and have indivial profiles
-* Search monsters by name and get relevent information
+* Log in and have indivial profiles ✅
+* Search monsters by name and get relevent information ✅
 * add monsters to encounter list
 * show encounter list
 * make list moveable based on intiative roll
