@@ -1,5 +1,12 @@
 <!-- View created encounter && add monsters, search bar after created encounter refs back to /monster/view page -->
 <h2>Encounter Details</h2>
 
+<h3><%= encounter.title %></h3>
+
+<% monsters.forEach(function(monster) { %>
+    <div class="well">
+        <h4><%= monster.name %></h4>
+    </div>
+<% }) %>
 
 <!--TODO: Add run encounter btn that links to /encounter/run -->

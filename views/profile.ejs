@@ -1,14 +1,17 @@
 <h2>Hi <%= currentUser.name %>. Welcome to Encounter Tracker!</h2>
 
+<h3>Select an encounter below.</h3>
+
 <% encounter.forEach(function(encounter) { %>
     <div class="well">
         <h2><%= encounter.title %></h2>
-        <form action="/encounter/view">
+        <form method="get" action="/encounter/view">
             <label for="viewEncounter"class="sr-only">View encounter</label>
+            <input hidden type="text" name="encounterId" value="<%= encounter.id %>">
             <input id="viewEncounter" class="btn btn-primary" type="submit" value="View Encounter">
         </form>
         <hr />
     </div>
 <% }); %>
 
-<!-- From there create a "run" button that goes to run encounter page and loads encounters with list of monsters -->
+
