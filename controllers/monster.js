@@ -15,8 +15,11 @@ router.get('/', function(req, res) {
     axios.get(dndUrl)
     .then(apiResponse => {
         let monster = apiResponse.data;
+        db.user.findByPk(req.user.id, {include: [db.encounter]})
+        .then(function(user) {
+            res.render('monster/view', {monster: monster, encounter: user.encounters})
+        })
         //console.log(monster);
-        res.render('monster/view', {monster: monster})
     }).catch(error => {
         console.log(error)
     })
@@ -27,8 +30,11 @@ router.post('/', function(req, res) {
     db.monster.findOrCreate({
         where: {name: req.body.name}
     }).then(function([monster, created]) {
-       db.encounter.findOrCreate({
-           where: {title: }
+       db.encounter.findByPk(req.body.encounterId).then(function(encounter) {
+           monster.addEncounter(encounter).then(function(relationInfo) {
+               console.log(monster.name, " was added to ", encounter.title);
+               res.redirect('profile')
+           })
        })
     }).catch(error => {
         console.log(error)

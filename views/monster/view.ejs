@@ -13,11 +13,17 @@
 
 <!-- TODO: Make add to encounter button that adds monsters to an encounter -->
 <% if(currentUser) { %>
-    <form method="POST" action="/monster">
-        <label class="sr-only">Add monster to encounter</label>
-        <input hidden type="text" name="name" value="<%= monster.name %>">
-        <button class="btn btn-primary" type="submit">Add to encounter</button>
-    </form>
+    <% encounter.forEach(function(encounter) { %>
+        <div class="well">
+            <h2><%= encounter.title %></h2>
+            <form method="POST" action="/monster">
+                <label class="sr-only">Add monster to encounter</label>
+                <input hidden type="text" name="name" value="<%= monster.name %>">
+                <input hidden type="text" name="encounterId" value="<%= encounter.id %>">
+                <button class="btn btn-primary" type="submit">Add to encounter</button>
+            </form>
+        </div>
+    <% }) %>
 <% } else { %>
     <h4>Please sign up, or sign in to continue.</h4>
     <form class="form-group" action="./auth/login"> 

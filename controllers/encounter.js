@@ -16,6 +16,16 @@ router.get('/create', function(req, res) {
     res.render('encounter/create')
 });
 
+// GET router to post encounter titles to monster view page
+router.get('/', function(req, res) {
+    db.encounter.findAll()
+    .then(function(encounter) {
+        res.render('monster/view', {encounter: encounter});
+    }).catch(error => {
+        console.log(error)
+    })
+})
+
 // POST route to add title to encounter && add to specific logged in user
 router.post('/', function(req, res) {
     db.encounter.findOrCreate({
