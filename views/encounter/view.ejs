@@ -7,7 +7,6 @@
 <% monsters.forEach(function(monster) { %>
     <div class="well">
         <h4><%= monster.name %></h4>
-        <!-- TODO: Delete button -->
         <form method="POST" action="/encounter/<%= monster.id %>/?_method=DELETE">
             <input hidden type="text" name="monsterId" value="<%= monster.id %>">
             <input hidden type="text" name="encounterId" value="<%= encounter.id %>">
@@ -17,7 +16,6 @@
     </div>
 <% }) %>
 
-<!--TODO: Add run encounter btn that links to /encounter/run -->
     <form method="get" action="/encounter/run">
         <label for="runEncounter"class="sr-only">Run encounter</label>
         <input hidden type="text" name="encounterId" value="<%= encounter.id %>">

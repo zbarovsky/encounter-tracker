@@ -63,14 +63,14 @@ router.post('/', function(req, res) {
     })
 });
 
-// //TODO: DELETE route for removing monsters from encounters
+// DELETE route for removing monsters from encounters
 router.delete('/:id', function(req, res) {
     db.encounter.findByPk(req.body.encounterId, {include: [db.monster, db.user]})
     .then(function(encounter) {
         db.monster.destroy({
             where: {id: req.body.monsterId}
         }).then(function(monster) {
-            res.redirect('encounter/view')
+            res.redirect('profile')
         })
     }).catch(error => {
         console.log(error)

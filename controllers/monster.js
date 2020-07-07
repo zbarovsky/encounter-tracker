@@ -27,11 +27,12 @@ router.get('/', function(req, res) {
 //POST route to add monster's name to data base to be accessed by encounters list
 router.post('/', function(req, res) {
     db.monster.create({
-        name: req.body.name
+        name: req.body.name,
+        initiative: 0
     }).then(function(monster) {
        db.encounter.findByPk(req.body.encounterId).then(function(encounter) {
            monster.addEncounter(encounter).then(function(relationInfo) {
-               console.log(monster.name, " was added to ", encounter.title);
+               //console.log(monster.name, " was added to ", encounter.title);
                res.redirect('profile')
            })
        })
