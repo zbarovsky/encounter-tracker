@@ -7,12 +7,10 @@
 <% monsters.forEach(function(monster) { %>
     <div class="well">
         <h4><%= monster.name %></h4>
-        <!-- TODO: Add init box, health, delete button  -->
+        <!-- TODO: health, delete button  -->
         <form>
-            <label for="updateOrder" class="sr-only">Add initiative roll</label>
+            <label for="updateOrder">Enter initiative</label>
             <input id="updateOrder" type="text" placeholder="<%= monster.initiative %>">
-            <input id="updateOrder" type="text" placeholder="<%= monster.health %>">
-            <input
         </form>
         <hr />
     </div>
