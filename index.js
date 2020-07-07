@@ -9,6 +9,7 @@ const passport = require('./config/ppConfig');
 const db = require('./models');
 const isLoggedIn = require('./middleware/isLoggedIn');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const methodOverride = require('method-override');
 
 // App setup
 const app = Express();
@@ -18,6 +19,7 @@ app.set('view engine', 'ejs');
 app.use(ejsLayouts);
 app.use(require('morgan')('dev'));
 app.use(helmet());
+app.use(methodOverride('_method'));
 
 // create new instance of class SequelizeStore
 const sessionStore = new SequelizeStore({
