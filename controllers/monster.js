@@ -40,6 +40,18 @@ router.post('/', function(req, res) {
     })
 })
 
+//TODO: DELETE route for removing monsters from encounters
+// router.delete('/:id', function(req, res) {
+//     db.monster.destroy({
+//         where: {id: req.query.monsterId}
+//     }).then(function(monster) {
+//         res.redirect('/encounter/view')
+//     }).catch(error => {
+//         console.log(error)
+//     })
+// })
+
+
 
 
 

@@ -12,7 +12,7 @@ router.get('/run', function(req, res) {
       //console.log(req.query.encounterId)
       db.encounter.findByPk(req.query.encounterId, {include: [db.monster, db.user]})
       .then(function(encounter) {
-          //console.log(encounter)
+          console.log(encounter)
           res.render('encounter/run', {encounter: encounter, monsters: encounter.dataValues.monsters})
       }).catch(error => {
           console.log(error)
@@ -63,14 +63,14 @@ router.post('/', function(req, res) {
     })
 });
 
-//TODO: DELETE route for removing monsters from encounters
+// //TODO: DELETE route for removing monsters from encounters
 router.delete('/:id', function(req, res) {
-    db.encounter.findByPk(req.params.encounterId, {include: [db.monster, db.user]})
+    db.encounter.findByPk(req.body.encounterId, {include: [db.monster, db.user]})
     .then(function(encounter) {
         db.monster.destroy({
-            where: {id: req.params.monsterId}
+            where: {id: req.body.monsterId}
         }).then(function(monster) {
-            res.redirect('/encounter/view')
+            res.redirect('encounter/view')
         })
     }).catch(error => {
         console.log(error)
