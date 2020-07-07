@@ -26,9 +26,9 @@ router.get('/', function(req, res) {
 
 //POST route to add monster's name to data base to be accessed by encounters list
 router.post('/', function(req, res) {
-    db.monster.findOrCreate({
-        where: {name: req.body.name}
-    }).then(function([monster, created]) {
+    db.monster.create({
+        name: req.body.name
+    }).then(function(monster) {
        db.encounter.findByPk(req.body.encounterId).then(function(encounter) {
            monster.addEncounter(encounter).then(function(relationInfo) {
                console.log(monster.name, " was added to ", encounter.title);
@@ -40,16 +40,6 @@ router.post('/', function(req, res) {
     })
 })
 
-//TODO: DELETE route for removing monsters from encounters
-// router.delete('/:id', function(req, res) {
-//     db.monster.destroy({
-//         where: {id: req.query.monsterId}
-//     }).then(function(monster) {
-//         res.redirect('/encounter/view')
-//     }).catch(error => {
-//         console.log(error)
-//     })
-// })
 
 
 
