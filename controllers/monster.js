@@ -29,7 +29,7 @@ router.post('/', function(req, res) {
     db.monster.create({
         name: req.body.name,
         health: req.body.health,
-        initiative: 0,
+        initiative: 0
     }).then(function(monster) {
        db.encounter.findByPk(req.body.encounterId).then(function(encounter) {
            monster.addEncounter(encounter).then(function(relationInfo) {

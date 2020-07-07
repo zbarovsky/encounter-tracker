@@ -1,15 +1,15 @@
 <!-- Page to view monsters and add them to an encounter (single list to start) -->
-<h2>Monster Results Viewing Page</h2>
 <form action="/monster" method="GET"> 
     <label for="viewMonster" class="sr-only">Search for monster.</label>
     <input id="viewMonster" class="form-control" type="text" name="name" placeholder="Search for monsters">  
 </form>
 
+<h2>Results for <%= monster.name %></h2>
+
 <div>
-    <h2><%= monster.name %></h2>
-    <h2><%= monster.type %></h2>
-    <h2><%= monster.challenge_rating %></h2>
-    <h2><%= monster.hit_points %></h2>
+    <h2>Type: <%= monster.type %></h2>
+    <h2>CR: <%= monster.challenge_rating %></h2>
+    <h2>HP: <%= monster.hit_points %></h2>
 </div>
 <hr />
 

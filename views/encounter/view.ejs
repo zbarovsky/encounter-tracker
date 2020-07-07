@@ -10,7 +10,7 @@
         <form method="POST" action="/encounter/<%= monster.id %>/?_method=DELETE">
             <input hidden type="text" name="monsterId" value="<%= monster.id %>">
             <input hidden type="text" name="encounterId" value="<%= encounter.id %>">
-            <button class="btn btn-primary" type="submit" value="DELETE">Remove From Encounter</button>
+            <button class="btn btn-danger" type="submit" value="DELETE">Remove From Encounter</button>
         </form>
         <hr />
     </div>

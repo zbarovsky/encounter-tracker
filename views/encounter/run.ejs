@@ -7,10 +7,16 @@
 <% monsters.forEach(function(monster) { %>
     <div class="well">
         <h4><%= monster.name %></h4>
-        <!-- TODO: health, delete button  -->
-        <form>
+        <!-- TODO: delete button  -->
+        <form method="POST" action="/encounter/<%= monster.id %>/?_method=PUT">
             <label for="updateOrder">Enter initiative</label>
             <input id="updateOrder" type="text" placeholder="<%= monster.initiative %>">
+
+            <label for="enterHealth">Enter health</label>
+            <input id="enterHealth" type="text" placeholder="<%= monster.health %>">
+            
+            <label for="update" class="sr-only">Update</label>
+            <input id="update" type="button" class="btn btn-primary" value="PUT" placeholder="Update">
         </form>
         <hr />
     </div>

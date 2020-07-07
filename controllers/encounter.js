@@ -70,7 +70,7 @@ router.delete('/:id', function(req, res) {
         db.monster.destroy({
             where: {id: req.body.monsterId}
         }).then(function(monster) {
-            res.redirect('profile')
+            res.redirect('/profile')
         })
     }).catch(error => {
         console.log(error)
