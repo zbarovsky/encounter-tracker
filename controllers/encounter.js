@@ -9,7 +9,14 @@ const isLoggedIn = require('../middleware/isLoggedIn');
 
 // GET our run route
 router.get('/run', function(req, res) {
-    res.render('encounter/run')
+      //console.log(req.query.encounterId)
+      db.encounter.findByPk(req.query.encounterId, {include: [db.monster, db.user]})
+      .then(function(encounter) {
+          //console.log(encounter)
+          res.render('encounter/run', {encounter: encounter, monsters: encounter.dataValues.monsters})
+      }).catch(error => {
+          console.log(error)
+      })
 });
 
 router.get('/create', function(req, res) {
@@ -27,22 +34,16 @@ router.get('/', function(req, res) {
 })
 
 router.get('/view', function(req, res) {
-//     db.user.findByPk(req.user.id, {include: [db.encounter]})
-//     .then(function(user) {
-//         res.render('encounter/view', {monster: user.encounters.monsters, encounter: user.encounters})
-//     }).catch(error => {
-//     console.log(error)
-//     })
-// })
-    // console.log(req.query.encounterId)
     db.encounter.findByPk(req.query.encounterId, {include: [db.monster, db.user]})
     .then(function(encounter) {
-        console.log(encounter)
+        //console.log(encounter)
         res.render('encounter/view', {encounter: encounter, monsters: encounter.dataValues.monsters})
     }).catch(error => {
         console.log(error)
     })
 })
+
+// TODO: PUT route to update run order based on init
 
 // POST route to add title to encounter && add to specific logged in user
 router.post('/', function(req, res) {
@@ -61,6 +62,8 @@ router.post('/', function(req, res) {
         console.log(error)
     })
 });
+
+//TODO: DELETE route for removing monsters from encounters
 
 
 

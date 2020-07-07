@@ -2,11 +2,19 @@
 <h2>Encounter Details</h2>
 
 <h3><%= encounter.title %></h3>
+<hr />
 
 <% monsters.forEach(function(monster) { %>
     <div class="well">
         <h4><%= monster.name %></h4>
+        <!-- TODO: Delete button -->
+        <hr />
     </div>
 <% }) %>
 
 <!--TODO: Add run encounter btn that links to /encounter/run -->
+    <form method="get" action="/encounter/run">
+        <label for="runEncounter"class="sr-only">Run encounter</label>
+        <input hidden type="text" name="encounterId" value="<%= encounter.id %>">
+        <input id="runEncounter" class="btn btn-primary" type="submit" value="Run Encounter">
+    </form>

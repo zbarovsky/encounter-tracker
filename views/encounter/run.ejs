@@ -1,2 +1,13 @@
 <!-- Page to run encounter -->
-<h2>Run and View encounters here</h2>
+<h2>Time to roll for initiative!</h2>
+
+<h3><%= encounter.title %></h3>
+<hr />
+
+<% monsters.forEach(function(monster) { %>
+    <div class="well">
+        <h4><%= monster.name %></h4>
+        <!-- TODO: Add init box, health, delete button  -->
+        <hr />
+    </div>
+<% }) %>
