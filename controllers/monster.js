@@ -10,9 +10,13 @@ const isLoggedIn = require('../middleware/isLoggedIn');
 
 // GET route for viewing monster data via API
 router.get('/', function(req, res) {
-    let dndUrl = `https://www.dnd5eapi.co/api/monsters/${req.query.name}/`
+    function getUrl() {
+        let dndUrl = `https://www.dnd5eapi.co/api/monsters/${req.query.name}/`
+        let newUrl = dndUrl.replace(/\s,/g, "-");
+        return newUrl;
+    }
     //console.log(dndUrl)
-    axios.get(dndUrl)
+    axios.get(getUrl())
     .then(apiResponse => {
         let monster = apiResponse.data;
         db.user.findByPk(req.user.id, {include: [db.encounter]})

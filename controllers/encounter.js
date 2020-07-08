@@ -69,9 +69,9 @@ router.post('/', function(req, res) {
     })
 });
 
-// TODO: PUT route to update init and health. Then update to list encounter in desc order for init roll.
+// PUT route to update init and health. Then update to list encounter in desc order for init roll.
 router.put('/:id', function(req, res) {
-    db.encounter.findByPk(req.body.encounterId, {include: [db.monster, db.user]})
+    db.encounter.findByPk(req.query.encounterId, {include: [db.monster, db.user]})
     .then (function(encounter) {
         db.monster.update({
             health: req.body.health,
@@ -82,7 +82,7 @@ router.put('/:id', function(req, res) {
             }
         }).then(function(updated) {
             //console.log(updated)
-            res.render('encounter/run', {encounter: encounter, monsters: encounter.dataValues.monsters})
+            res.redirect('/profile')
         })  
     }).catch(function(error) {
         console.log(error)
