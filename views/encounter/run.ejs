@@ -9,14 +9,17 @@
         <h4><%= monster.name %></h4>
         <!-- TODO: delete button  -->
         <form method="POST" action="/encounter/<%= monster.id %>/?_method=PUT">
-            <label for="updateOrder">Enter initiative</label>
-            <input id="updateOrder" type="text" placeholder="<%= monster.initiative %>">
+            <input hidden type="text" name="monsterId" value="<%= monster.id %>">
+            <input hidden type="text" name="encounterId" value="<%= encounter.id %>">
 
-            <label for="enterHealth">Enter health</label>
-            <input id="enterHealth" type="text" placeholder="<%= monster.health %>">
-            
+            <label for="updateOrder">Initiative</label>
+            <input id="updateOrder" type="text" name="initiative" placeholder="<%= monster.initiative %>">
+
+            <label for="enterHealth">Health</label>
+            <input id="enterHealth" type="text" name="health" placeholder="<%= monster.health %>">
+
             <label for="update" class="sr-only">Update</label>
-            <input id="update" type="button" class="btn btn-primary" value="PUT" placeholder="Update">
+            <input id="update" type="submit" class="btn btn-primary" value="Update">
         </form>
         <hr />
     </div>

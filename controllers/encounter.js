@@ -9,15 +9,25 @@ const isLoggedIn = require('../middleware/isLoggedIn');
 
 // GET our run route
 router.get('/run', function(req, res) {
-      //console.log(req.query.encounterId)
-      db.encounter.findByPk(req.query.encounterId, {include: [db.monster, db.user]})
-      .then(function(encounter) {
-          console.log(encounter)
-          res.render('encounter/run', {encounter: encounter, monsters: encounter.dataValues.monsters})
-      }).catch(error => {
+        console.log('hitting route')
+      //console.log(req.body)
+      db.encounter.findByPk(req.query.encounterId, 
+        {
+            include: [db.monster, db.user],
+            order: [
+                [db.monster, 'initiative', 'DESC']
+            ]
+        })
+       .then(function(encounter) {
+           
+            console.log('🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬')
+            
+            console.log(encounter)
+            res.render('encounter/run', {encounter: encounter, monsters: encounter.dataValues.monsters})
+        }).catch(error => {
           console.log(error)
-      })
-});
+    })
+})
 
 router.get('/create', function(req, res) {
     res.render('encounter/create')
@@ -43,8 +53,6 @@ router.get('/view', function(req, res) {
     })
 })
 
-// TODO: PUT route to update run order based on init
-
 // POST route to add title to encounter && add to specific logged in user
 router.post('/', function(req, res) {
     db.encounter.findOrCreate({
@@ -62,6 +70,26 @@ router.post('/', function(req, res) {
         console.log(error)
     })
 });
+
+// TODO: PUT route to update init and health. Then update to list encounter in desc order for init roll.
+router.put('/:id', function(req, res) {
+    db.encounter.findByPk(req.body.encounterId, {include: [db.monster, db.user]})
+    .then (function(encounter) {
+        db.monster.update({
+            health: req.body.health,
+            initiative: req.body.initiative
+        }, {
+            where: {
+                id: req.body.monsterId
+            }
+        }).then(function(updated) {
+            //console.log(updated)
+            res.render('/encounter/run')
+        })  
+    }).catch(function(error) {
+        console.log(error)
+    })
+})
 
 // DELETE route for removing monsters from encounters
 router.delete('/:id', function(req, res) {

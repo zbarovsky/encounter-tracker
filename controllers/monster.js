@@ -24,7 +24,7 @@ router.get('/', function(req, res) {
     })
 });
 
-//POST route to add monster's name to data base to be accessed by encounters list
+//POST route to add monster's name, init, and health to data base to be accessed by encounters list
 router.post('/', function(req, res) {
     db.monster.create({
         name: req.body.name,
