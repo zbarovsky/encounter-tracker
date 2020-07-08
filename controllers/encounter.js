@@ -8,7 +8,7 @@ const passport = require('../config/ppConfig');
 const isLoggedIn = require('../middleware/isLoggedIn');
 
 // GET our run route
-router.get('/run', function(req, res) {
+router.get('/run', isLoggedIn, function(req, res) {
         //console.log('hitting route')
       //console.log(req.body)
       db.encounter.findByPk(req.query.encounterId, 
@@ -41,7 +41,7 @@ router.get('/', function(req, res) {
     })
 })
 
-router.get('/view', function(req, res) {
+router.get('/view', isLoggedIn, function(req, res) {
     db.encounter.findByPk(req.query.encounterId, {include: [db.monster, db.user]})
     .then(function(encounter) {
         //console.log(encounter)

@@ -13,7 +13,6 @@ router.get('/', function(req, res) {
     function getUrl() {
         let dndUrl = `https://www.dnd5eapi.co/api/monsters/${req.query.name}/`
         let newUrl = dndUrl.replace(/\s/g, "-");
-        console.log('💩💩💩💩💩💩💩' + newUrl)
         return newUrl;
     }
     //console.log(dndUrl)
