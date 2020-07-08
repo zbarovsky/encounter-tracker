@@ -9,7 +9,7 @@ const isLoggedIn = require('../middleware/isLoggedIn');
 
 // GET our run route
 router.get('/run', function(req, res) {
-        console.log('hitting route')
+        //console.log('hitting route')
       //console.log(req.body)
       db.encounter.findByPk(req.query.encounterId, 
         {
@@ -19,10 +19,8 @@ router.get('/run', function(req, res) {
             ]
         })
        .then(function(encounter) {
-           
-            console.log('🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬')
-            
-            console.log(encounter)
+            //console.log('🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬🤬')
+            //console.log(encounter)
             res.render('encounter/run', {encounter: encounter, monsters: encounter.dataValues.monsters})
         }).catch(error => {
           console.log(error)
@@ -84,7 +82,7 @@ router.put('/:id', function(req, res) {
             }
         }).then(function(updated) {
             //console.log(updated)
-            res.render('/encounter/run')
+            res.render('encounter/run')
         })  
     }).catch(function(error) {
         console.log(error)
