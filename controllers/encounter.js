@@ -82,7 +82,7 @@ router.put('/:id', function(req, res) {
             }
         }).then(function(updated) {
             //console.log(updated)
-            res.render('encounter/run')
+            res.redirect('encounter/run')
         })  
     }).catch(function(error) {
         console.log(error)
