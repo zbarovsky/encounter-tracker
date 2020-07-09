@@ -93,7 +93,7 @@ router.put('/:id', function(req, res) {
         }  
     }).then(function(updated) {
         //console.log(updated)
-        console.log(rollResult)
+        //console.log(rollResult)
         res.redirect('back')
     }).catch(function(error) {
         console.log(error)

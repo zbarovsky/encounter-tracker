@@ -38,7 +38,7 @@ You're parties ready to fight that adult black dragon, initiative is rolled, and
 * Ability to add PC's and relevent stats to a list
 * Add PC's to encounter list
 * Hoard rolls 
-* Init roll button
+* Init roll button ✅
 * Multiple encounter lists ✅
 * Update and track health during encounter ✅
 * Ability to add custom monsters
