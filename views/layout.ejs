@@ -12,11 +12,12 @@
     <header>
         <nav class="navbar navbar-dark bg-dark justify-content-around">
             <% if(currentUser) { %>
-                <form class="form-inline col-10 pr-5" action="/monster" method="GET"> 
+                <form class="form-inline col-9 pr-5" action="/monster" method="GET"> 
                     <label for="viewMonster" class="sr-only">Search for monster.</label>
                     <input id="viewMonster" class="form-control" type="text" name="name" size="100" placeholder="Search for monsters">  
                 </form>
                 <a class="navbar-nav mr-2" href="/encounter/create">Create Encounter</a>
+                <a class="navbar-nav mr-2" href="/monster/create">Add monster</a>
                 <a class="navbar-nav mr-2" href="/profile">Profile</a>
                 <a class="navbar-nav mr-2" href="/">Home</a>
                 <a class="navbar-nav mr-2" href="/auth/logout">Logout</a>
