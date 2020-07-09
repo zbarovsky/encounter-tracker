@@ -30,17 +30,17 @@ You're parties ready to fight that adult black dragon, initiative is rolled, and
 ## MVP
 * Log in and have indivial profiles ✅
 * Search monsters by name and get relevent information ✅
-* add monsters to encounter list
-* show encounter list
-* make list moveable based on intiative roll
+* add monsters to encounter list ✅
+* show encounter list ✅
+* make list moveable based on intiative roll ✅
 
 ## Stretch
 * Ability to add PC's and relevent stats to a list
 * Add PC's to encounter list
 * Hoard rolls 
 * Init roll button
-* Multiple encounter lists
-* Update and track health during encounter
+* Multiple encounter lists ✅
+* Update and track health during encounter ✅
 * Ability to add custom monsters
 * Friends list (view other peoples encounters)
 

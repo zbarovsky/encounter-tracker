@@ -11,13 +11,11 @@
     <h2>CR: <%= monster.challenge_rating %></h2>
     <h2>HP: <%= monster.hit_points %></h2>
 </div>
-<hr />
-
-<!-- TODO: Make add to encounter button that adds monsters to an encounter -->
 <% if(currentUser) { %>
+    <h3>Add <%= monster.name %> to an encounter</h3>
     <% encounter.forEach(function(encounter) { %>
         <div class="well">
-            <h2><%= encounter.title %></h2>
+            <h3><%= encounter.title %></h2>
             <form method="POST" action="/monster">
                 <label class="sr-only">Add monster to encounter</label>
                 <input hidden type="text" name="name" value="<%= monster.name %>">

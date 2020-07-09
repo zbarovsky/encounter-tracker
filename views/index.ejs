@@ -1,17 +1,24 @@
 <!-- HOME PAGE -->
 <div class="container">
 <h1>Welcome to Encounter Tracker!</h1>
-
 <!-- Stick something here, idk, an image or something like that. Bulk out the page a bit -->
 <% if(currentUser) { %>
 <h2>Choose an option below</h2>
+<h4>To get started, we recommend first creating an encounter</h4>
+<form class="form-inline" action="./encounter/create">
+    <label for="createEncounter" class="sr-only">Create encounter</label>
+    <input id="createEncounter" class="btn btn-primary" type="submit" name="create" value="Create Encounter">
+</form>
+<br />
+<h5>Already have encounters created? Use the search bar above to start looking for monsters to add to your encounters.</h5>
+<h5>Got your encounter ready to go? Head on over to your profile page to run those encounters.</h5>
 <% } else { %>
     <h4>Please sign up, or log in to get started</h4>
     <form class="form-inline" action="./auth/login"> 
         <label for="viewMonster" class="sr-only">Sign up</label>
         <input id="viewMonster" class="btn btn-primary" type="submit" name="name" value="Login to continue">  
     </form>
-    <p> Or </p>
+    <br />
     <form class="form-inline" action="./auth/register"> 
         <label for="viewMonster" class="sr-only">Register</label>
         <input id="viewMonster" class="btn btn-primary" type="submit" name="name" value="Sign up here">  

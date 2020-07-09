@@ -26,7 +26,7 @@ router.get('/', function(req, res) {
     }).catch(error => {
         console.log(error)
         req.flash('error', 'Sorry, this monster may not be in our database, please try searching again.')
-        res.redirect('/')
+        res.redirect('back')
     })
 });
 

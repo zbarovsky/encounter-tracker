@@ -61,7 +61,7 @@ router.post('/login', function(req, res, next) {
             // if error move to error
             if (error) next(error);
             // if success flash success message
-            req.flash('success', 'You are validated and logged in.')
+            //req.flash('success', 'You are validated and logged in.')
             // if success save session, and redirect user
             req.session.save(function() {
                 return res.redirect('/profile')
