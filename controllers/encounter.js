@@ -88,8 +88,8 @@ router.put('/:id', function(req, res) {
             }, {
                 where: {
                     id: req.body.monsterId
-            }
-        })
+                }
+            })
         }  
     }).then(function(updated) {
         //console.log(updated)

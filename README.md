@@ -51,5 +51,7 @@ You're parties ready to fight that adult black dragon, initiative is rolled, and
 * Lots of different relationships between postgres tables, making sure they link properly will be difficult
 
 ## Bugs
+* init and health have to be updated together every time, or the page doesn't refresh and the data doesn't populate.
 
 ## Acknowledgements
+* my background came from wallpapercave.com

@@ -16,8 +16,8 @@
     </div>
 <% }) %>
 
-    <form method="GET" action="/encounter/run">
-        <label for="runEncounter"class="sr-only">Run encounter</label>
-        <input hidden type="text" name="encounterId" value="<%= encounter.id %>">
-        <input id="runEncounter" class="btn btn-primary" type="submit" value="Run Encounter">
-    </form>
+<form method="GET" action="/encounter/run">
+    <label for="runEncounter"class="sr-only">Run encounter</label>
+    <input hidden type="text" name="encounterId" value="<%= encounter.id %>">
+    <input id="runEncounter" class="btn btn-primary" type="submit" value="Run Encounter">
+</form>

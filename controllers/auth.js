@@ -24,7 +24,7 @@ router.post('/register', function(req, res){
             // authenticate user and start authorization process
             console.log("User created! 🎆");
             passport.authenticate('local', {
-                successRedirect: '/profile',
+                successRedirect: '/',
                 successFlash: 'Thanks for signing up!'
             })(req, res);
         } else {
@@ -64,7 +64,7 @@ router.post('/login', function(req, res, next) {
             //req.flash('success', 'You are validated and logged in.')
             // if success save session, and redirect user
             req.session.save(function() {
-                return res.redirect('/profile')
+                return res.redirect('/')
             })
         })
     })(req, res, next);
