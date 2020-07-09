@@ -81,8 +81,9 @@ router.put('/:id', function(req, res) {
                 id: req.body.monsterId
             }
         }).then(function(updated) {
-            //console.log(updated)
-            res.redirect('/profile')
+            console.log(updated)
+            console.log(req.body.encounterId)
+            res.redirect('back')
         })  
     }).catch(function(error) {
         console.log(error)
@@ -96,7 +97,7 @@ router.delete('/:id', function(req, res) {
         db.monster.destroy({
             where: {id: req.body.monsterId}
         }).then(function(monster) {
-            res.redirect('/profile')
+            res.redirect('back')
         })
     }).catch(error => {
         console.log(error)
