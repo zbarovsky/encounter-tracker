@@ -9,8 +9,6 @@ const isLoggedIn = require('../middleware/isLoggedIn');
 
 // GET our run route
 router.get('/run', isLoggedIn, function(req, res) {
-        //console.log('hitting route')
-      //console.log(req.body)
       db.encounter.findByPk(req.query.encounterId, 
         {
             include: [db.monster, db.user],
@@ -69,7 +67,7 @@ router.post('/', function(req, res) {
     })
 });
 
-// PUT route to update init and health. Then update to list encounter in desc order for init roll.
+// PUT route to update init and health
 router.put('/:id', function(req, res) {
     db.encounter.findByPk(req.query.encounterId, {include: [db.monster, db.user]})
     .then (function(encounter) {
@@ -81,8 +79,8 @@ router.put('/:id', function(req, res) {
                 id: req.body.monsterId
             }
         }).then(function(updated) {
-            console.log(updated)
-            console.log(req.body.encounterId)
+            //console.log(updated)
+            //console.log(req.body.encounterId)
             res.redirect('back')
         })  
     }).catch(function(error) {
