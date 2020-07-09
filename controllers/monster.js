@@ -15,7 +15,6 @@ router.get('/', function(req, res) {
         let newUrl = dndUrl.replace(/\s/g, "-");
         return newUrl;
     }
-    //console.log(dndUrl)
     axios.get(getUrl())
     .then(apiResponse => {
         let monster = apiResponse.data;
@@ -30,6 +29,15 @@ router.get('/', function(req, res) {
     })
 });
 
+//GET route to create your own monster
+router.get('/create', isLoggedIn, function(req, res) {
+    db.user.findByPk(req.user.id, {include: [db.encounter]})
+    .then(function(user) {
+        res.render('monster/create', {encounter: user.encounters})
+    })
+})
+    
+
 //POST route to add monster's name, init, and health to data base to be accessed by encounters list
 router.post('/', function(req, res) {
     db.monster.create({
@@ -39,8 +47,9 @@ router.post('/', function(req, res) {
     }).then(function(monster) {
        db.encounter.findByPk(req.body.encounterId).then(function(encounter) {
            monster.addEncounter(encounter).then(function(relationInfo) {
-               //console.log(monster.name, " was added to ", encounter.title);
-               res.redirect('profile')
+               //console.log('💩💩💩💩💩💩💩💩💩' + monster.name, " was added to ", encounter.title);
+               req.flash('success', 'Successfully added, go ahead, search for another')
+               res.redirect('back')
            })
        })
     }).catch(error => {

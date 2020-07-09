@@ -1,0 +1,15 @@
+<!-- Add Own Monsters to Database -->
+<h2>Add Your Own Monster Here</h2>
+
+<form method="POST" action="/monster">
+    <label class="sr-only">Add Monster</label>
+    <input type="text" name="name" placeholder="Monster Name">
+    <input type="text" name="health" placeholder="Hit Points">
+    <label for="encounter" class="sr-only">Encounter</label>
+    <select name="encounterId" id="encounter">
+        <% encounter.forEach(function(encounter) { %> 
+            <option value="<%= encounter.id %>"><%= encounter.title %></option>
+        <% }) %>
+    </select>
+    <button class="btn btn-primary" type="submit">Add to encounter</button>
+</form>
