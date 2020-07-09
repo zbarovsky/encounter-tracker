@@ -69,20 +69,32 @@ router.post('/', function(req, res) {
 
 // PUT route to update init and health
 router.put('/:id', function(req, res) {
+    let rollResult = Math.floor((Math.random() * 20) +1)
     db.encounter.findByPk(req.query.encounterId, {include: [db.monster, db.user]})
     .then (function(encounter) {
-        db.monster.update({
-            health: req.body.health,
-            initiative: req.body.initiative
-        }, {
-            where: {
-                id: req.body.monsterId
+        if(req.body.roll) {
+            db.monster.update({
+                health: req.body.health,
+                initiative: rollResult
+            }, {
+                where: {
+                    id: req.body.monsterId
+                }
+            })
+        } else {
+            db.monster.update({
+                health: req.body.health,
+                initiative: req.body.initiative
+            }, {
+                where: {
+                    id: req.body.monsterId
             }
-        }).then(function(updated) {
-            //console.log(updated)
-            //console.log(req.body.encounterId)
-            res.redirect('back')
-        })  
+        })
+        }  
+    }).then(function(updated) {
+        //console.log(updated)
+        console.log(rollResult)
+        res.redirect('back')
     }).catch(function(error) {
         console.log(error)
     })
