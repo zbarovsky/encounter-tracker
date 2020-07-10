@@ -52,6 +52,6 @@ You're parties ready to fight that adult black dragon, initiative is rolled, and
 
 ## Bugs
 * init and health have to be updated together every time, or the page doesn't refresh and the data doesn't populate.
-
+* cannot search for monsters without signing in/up first
 ## Acknowledgements
 * my background came from wallpapercave.com

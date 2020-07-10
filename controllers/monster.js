@@ -9,7 +9,7 @@ const isLoggedIn = require('../middleware/isLoggedIn');
 //const { default: ModelManager } = require('sequelize/types/lib/model-manager');
 
 // GET route for viewing monster data via API
-router.get('/', function(req, res) {
+router.get('/', isLoggedIn, function(req, res) {
     function getUrl() {
         let dndUrl = `https://www.dnd5eapi.co/api/monsters/${req.query.name}/`
         let newUrl = dndUrl.replace(/\s/g, "-");
