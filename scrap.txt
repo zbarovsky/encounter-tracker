@@ -22,4 +22,39 @@ sequelize model:create --name usersEncounters --attributes userId:integer,encoun
 
 sequelize db:migrate
 
-TODO: ADD PARTY/PLAYER
+TODO: MIGRATE DATABASES BELOW
+
+player
+------
+sequelize model:create --name player --attributes name:string,health:integer,initiative:integer
+
+sequelize db:migrate
+
+party
+-----
+sequelize model:create --name party --attributes name:string
+
+sequelize db:migrate
+
+usersParties
+------------
+sequelize model:create --name usersParties --attributes partyId:integer,userId:integer
+
+sequelize db:migrate
+
+playersParties
+--------------
+sequelize model:create --name playersParties --attributes partyId:integer,playerId:integer
+
+sequelize db:migrate
+
+partiesEncounters
+-----------------
+sequelize model:create --name partiesEncounters --attributes partyId:integer,encounterId:integer
+
+sequelize db:migrate 
+
+TODO: MAYBE: playersEncounters
+sequelize model:create --name playersEncounters --attributes playerId:integer,encounterId:integer
+
+sequelize db:migrate

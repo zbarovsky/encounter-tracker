@@ -64,6 +64,8 @@ app.get('/profile', isLoggedIn, function(req, res){
     })
 })
 
+// TODO: delete route to remove enounter from profile page -- see testDb.js
+
 // include controllers
 app.use('/auth', require('./controllers/auth'));
 app.use ('/encounter', require('./controllers/encounter'));

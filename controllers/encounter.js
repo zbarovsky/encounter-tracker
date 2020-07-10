@@ -102,6 +102,7 @@ router.put('/:id', function(req, res) {
 
 // DELETE route for removing monsters from encounters
 router.delete('/:id', function(req, res) {
+    console.log("💩")
     db.encounter.findByPk(req.body.encounterId, {include: [db.monster, db.user]})
     .then(function(encounter) {
         db.monster.destroy({
@@ -113,7 +114,6 @@ router.delete('/:id', function(req, res) {
         console.log(error)
     })
 })
-
 
 
 module.exports = router;
