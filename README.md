@@ -41,7 +41,7 @@ You're parties ready to fight that adult black dragon, initiative is rolled, and
 * Init roll button ✅
 * Multiple encounter lists ✅
 * Update and track health during encounter ✅
-* Ability to add custom monsters
+* Ability to add custom monsters ✅
 * Friends list (view other peoples encounters)
 
 ## Roadblocks
