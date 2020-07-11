@@ -11,26 +11,39 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-dark bg-dark justify-content-around">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-around">
+            
             <% if(currentUser) { %>
                 <form class="form-inline col-8 pr-5" action="/monster" method="GET"> 
                     <label for="viewMonster" class="sr-only">Search for monster.</label>
                     <input id="viewMonster" class="form-control" type="text" name="name" size="100" placeholder="Search for monsters">  
                 </form>
-                <a class="navbar-nav mr-2" href="/encounter/create">Create Encounter</a>
-                <a class="navbar-nav mr-2" href="/monster/create">Add PC or Monster</a>
-                <a class="navbar-nav mr-2" href="/profile">Profile</a>
-                <a class="navbar-nav mr-2" href="/">Home</a>
-                <a class="navbar-nav mr-2" href="/auth/logout">Logout</a>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link mr-2" href="/encounter/create">Create Encounter</a></li>
+                        <li class="nav-item"><a class="nav-link mr-2" href="/monster/create">Add PC or Monster</a></li>
+                        <li class="nav-item"><a class="nav-link mr-2" href="/profile">Profile</a></li>
+                        <li class="nav-item"><a class="nav-link mr-2" href="/">Home</a> </li>
+                        <li class="nav-item"><a class="nav-link mr-2" href="/auth/logout">Logout</a></li>
+                    </ul>
+                   
+                </div>
             <% } else { %>
                 <form class="form-inline col-10" action="/monster" method="GET"> 
                     <label for="viewMonster" class="sr-only">Search for monster</label>
                     <input id="viewMonster" class="form-control mr-2" type="text" name="name" size="100" placeholder="Search for monsters">  
                 </form>
-                <a class="navbar-nav mr-0" href="/auth/register">Register</a>
-                <a class="navbar-nav mr-0" href="/auth/login">Login</a>
-                <a class="navbar-nav mr-0" href="/">Home</a>
-            <% } %>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link mr-2" href="/auth/register">Register</a></li>
+                        <li class="nav-item"><a class="nav-link mr-2" href="/auth/login">Login</a></li>
+                        <li class="nav-item"><a class="nav-link mr-2" href="/">Home</a></li>
+                    </ul>
+                </div>
+            <% } %> 
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </nav>
     </header>
     <div class="container my-4">
