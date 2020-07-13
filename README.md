@@ -60,6 +60,8 @@ Method | Path | Purpose
 | GET | monster/create | user creates own monster and adds to a specific encounter |
 | POST | monster/ | add monsters name, initiative, and health to database to be accessed by encounter list |
 
+* also all the auth routes we had already created.
+
 ## Roadblocks
 * A lot to complete in a week
 * It's a lot of pages to build
