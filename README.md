@@ -36,7 +36,7 @@ You're parties ready to fight that adult black dragon, initiative is rolled, and
 
 ## Stretch
 * Ability to add PC's and relevent stats to a list
-* Add PC's to encounter list
+* Add PC's to encounter list ✅
 * Hoard rolls 
 * Init roll button ✅
 * Multiple encounter lists ✅
@@ -60,7 +60,7 @@ Method | Path | Purpose
 | GET | monster/create | user creates own monster and adds to a specific encounter |
 | POST | monster/ | add monsters name, initiative, and health to database to be accessed by encounter list |
 
-* also all the auth routes we had already created.
+* Also all the auth routes we had already created.
 
 ## Roadblocks
 * A lot to complete in a week
@@ -69,7 +69,6 @@ Method | Path | Purpose
 * Lots of different relationships between postgres tables, making sure they link properly will be difficult
 
 ## Bugs
-* cannot search for monsters without signing in/up first SOLVED: now have to be logged in to use search, if not, redirects to log in page.
 * If user adds an extra space at the end, they can't search for the monster.
 
 ## Acknowledgements
