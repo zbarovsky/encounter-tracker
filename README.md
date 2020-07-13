@@ -56,4 +56,5 @@ You're parties ready to fight that adult black dragon, initiative is rolled, and
 * If user adds an extra space at the end, they can't search for the monster.
 
 ## Acknowledgements
-* my background came from wallpapercave.com
+* Link to my background image: https://wallpapercave.com/w/wp4786823
+* Thanks to Tyler, Daniel, and Emily for testing my app at launch.
