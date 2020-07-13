@@ -44,6 +44,22 @@ You're parties ready to fight that adult black dragon, initiative is rolled, and
 * Ability to add custom monsters ✅
 * Friends list (view other peoples encounters)
 
+## Routes
+Method | Path | Purpose
+| ------ | -------------- | -------------------------------- |
+| GET | / | Render index (home) page |
+| GET | /profile | Render users profile page with specific encounters |
+| GET | encounter/run | get users monsters and reorder based on iniative in DESC order |
+| GET | encounter/create | render page to create encounters to add to database |
+| GET | encounter/ | gets user encounters and post them on profile page |
+| GET | encounter/view | renders encounter page and the monsters that are in the encounter |
+| POST | encounter/ | add title to encounter and add it to specific user |
+| PUT | encounter/:id | update monsters initiative and health based on input/random roll button |
+| DELETE | encounter/:id | Remove monster from specific encounter
+| GET | monster/ | axios db call to API to get monster, post relevant info, and add monster to a specific user encounter |
+| GET | monster/create | user creates own monster and adds to a specific encounter |
+| POST | monster/ | add monsters name, initiative, and health to database to be accessed by encounter list |
+
 ## Roadblocks
 * A lot to complete in a week
 * It's a lot of pages to build
@@ -51,10 +67,9 @@ You're parties ready to fight that adult black dragon, initiative is rolled, and
 * Lots of different relationships between postgres tables, making sure they link properly will be difficult
 
 ## Bugs
-* init and health have to be updated together every time, or the page doesn't refresh and the data doesn't populate. -- FIXED.
 * cannot search for monsters without signing in/up first SOLVED: now have to be logged in to use search, if not, redirects to log in page.
 * If user adds an extra space at the end, they can't search for the monster.
 
 ## Acknowledgements
 * Link to my background image: https://wallpapercave.com/w/wp4786823
-* Thanks to Tyler, Daniel, and Emily for testing my app at launch.
+* Thanks to Emily, Tyler, and Daniel for testing my app at launch.
