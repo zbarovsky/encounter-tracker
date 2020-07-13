@@ -59,8 +59,11 @@ Method | Path | Purpose
 | GET | monster/ | axios db call to API to get monster, post relevant info, and add monster to a specific user encounter |
 | GET | monster/create | user creates own monster and adds to a specific encounter |
 | POST | monster/ | add monsters name, initiative, and health to database to be accessed by encounter list |
-
-* Also all the auth routes we had already created.
+| GET | auth/register | route to register user |
+| POST | auth/register | find or create user; name, email, password |
+| GET | auth/login | route to login page |
+| POST | auth/login | authenticate user upon login |
+| GET | auth/logout | logs user out of app. Redirects to home page |
 
 ## Roadblocks
 * A lot to complete in a week
